@@ -1,5 +1,5 @@
 name          'arioch-lumberjack'
-version       '0.0.0'
+version       '0.0.1'
 author        'Tom De Vylder'
 license       'Apache License, Version 2.0'
 summary       'Lumberjack module'
