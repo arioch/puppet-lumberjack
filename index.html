@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Puppet-lumberjack by arioch</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Puppet-lumberjack</h1>
+        <p>Puppet module to manage Lumberjack, a lightweight Logstash shipper.</p>
+
+        <p class="view"><a href="https://github.com/arioch/puppet-lumberjack">View the Project on GitHub <small>arioch/puppet-lumberjack</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/arioch/puppet-lumberjack/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/arioch/puppet-lumberjack/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/arioch/puppet-lumberjack">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="puppet-lumberjack" class="anchor" href="#puppet-lumberjack"><span class="octicon octicon-link"></span></a>Puppet Lumberjack</h1>
+
+<h2>
+<a name="build-status" class="anchor" href="#build-status"><span class="octicon octicon-link"></span></a>Build status</h2>
+
+<p><a href="https://travis-ci.org/arioch/puppet-lumberjack"><img src="https://travis-ci.org/arioch/puppet-lumberjack.png?branch=master" alt="Build Status"></a></p>
+
+<h2>
+<a name="example-usage" class="anchor" href="#example-usage"><span class="octicon octicon-link"></span></a>Example usage</h2>
+
+<h3>
+<a name="install-lumberjack" class="anchor" href="#install-lumberjack"><span class="octicon octicon-link"></span></a>Install lumberjack</h3>
+
+<pre><code>node /box/ {
+  include lumberjack
+}
+</code></pre>
+
+<h3>
+<a name="configure-lumberjack" class="anchor" href="#configure-lumberjack"><span class="octicon octicon-link"></span></a>Configure lumberjack</h3>
+
+<pre><code>node /box/ {
+  class { 'lumberjack':
+    host        =&gt; '127.0.0.1',
+    port        =&gt; 5000,
+    window_size =&gt; 1024,
+    logs        =&gt; [ '/var/log/*', '/var/log/*/*' ],
+  }
+}
+</code></pre>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ul>
+<li>Fork it</li>
+<li>Create a feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Run rspec tests (<code>bundle exec rake spec</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Added some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/arioch">arioch</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
