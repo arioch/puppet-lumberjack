@@ -9,7 +9,7 @@ class lumberjack::params {
 
   case $::operatingsystem {
     'RedHat': {
-      $config_dir         = '/etc/lumberjack'
+      $config_dir         = '/opt/lumberjack'
       $config_dir_mode    = '0755'
       $config_dir_recurse = false
       $config_file        = '/etc/default/lumberjack'
@@ -33,7 +33,7 @@ class lumberjack::params {
     }
 
     'Debian': {
-      $config_dir         = '/etc/lumberjack'
+      $config_dir         = '/opt/lumberjack'
       $config_dir_mode    = '0755'
       $config_dir_recurse = false
       $config_file        = '/etc/default/lumberjack'

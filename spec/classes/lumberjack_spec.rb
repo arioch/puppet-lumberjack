@@ -5,7 +5,7 @@ describe 'lumberjack', :type => :class do
   let(:pre_condition) { '$concat_basedir = "/tmp"' }
   let (:params) {
     {
-      :config_dir => '/etc/lumberjack',
+      :config_dir => '/opt/lumberjack',
       :config_file => '/etc/default/lumberjack'
     }
   }
@@ -17,7 +17,7 @@ describe 'lumberjack', :type => :class do
     it { should include_class('lumberjack::service') }
 
     it { should contain_package('lumberjack').with_ensure('present') }
-    it { should contain_file('/etc/lumberjack').with_ensure('directory') }
+    it { should contain_file('/opt/lumberjack').with_ensure('directory') }
     it { should contain_file('/var/log/lumberjack').with_ensure('directory') }
     it { should contain_file('/etc/default/lumberjack').with_ensure('present') }
 
@@ -42,7 +42,7 @@ describe 'lumberjack', :type => :class do
     let (:params) { { :config_dir_mode => '_VALUE_' } }
 
     it {
-      should contain_file('/etc/lumberjack').with(
+      should contain_file('/opt/lumberjack').with(
         'mode' => '_VALUE_'
       )
     }
@@ -52,7 +52,7 @@ describe 'lumberjack', :type => :class do
     let (:params) { { :config_dir_recurse => true } }
 
     it {
-      should contain_file('/etc/lumberjack').with(
+      should contain_file('/opt/lumberjack').with(
         'recurse' => 'true'
       )
     }
